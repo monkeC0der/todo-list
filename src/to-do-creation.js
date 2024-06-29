@@ -4,7 +4,7 @@ export function createProject(projectName) {
     return {getProjectName}
 }
 
-export function createToDo (projectName, title, description, priority, dueDate) {
+export function createToDo (projectName, title, description, priority, dueDate, completed) {
     const {getProjectName} = createProject(projectName);
 
     function editMessage(value) {
@@ -22,5 +22,10 @@ export function createToDo (projectName, title, description, priority, dueDate) 
     function editDueDate(value) {
       this.dueDate = value;
     }
-    return {title, description, priority, dueDate, getProjectName, editMessage, editTitle, editPriority, editDueDate}
+
+    function editCompleted(value) {
+      this.completed = value;
+    }
+
+    return {title, description, priority, dueDate, completed, getProjectName, editMessage, editTitle, editPriority, editDueDate, editCompleted}
  }
