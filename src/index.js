@@ -2,20 +2,6 @@ import './styles.css';
 import saveToDo from './storage';
 import {createProject, createToDo} from './to-do-creation';
 
- function component() {
-   const element = document.createElement('div');
-
-   element.innerHTML = 'supo';
-   element.classList.add('t')
-
-   return element;
- }
-
- document.body.appendChild(component());
-
-
-
-
 let toDoArray = [];
 
 

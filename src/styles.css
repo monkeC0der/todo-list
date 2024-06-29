@@ -1,4 +1,41 @@
 body {
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    height: 100vh;
 }
 
+#header {
+    background-color: rgb(62, 112, 206);
+    display: flex;
+    justify-content: center;
+    height: calc(100vh/10)
+}
+
+#sidebar-todo-container {
+    background-color: rgb(189, 189, 189);
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh/10*8);
+}
+
+#sidebar {
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    width: calc(100%/10*2);
+}
+
+#todo-grid {
+    background-color: rgb(221, 219, 219);
+    width: calc(100%/10*8);
+}
+
+#footer {
+    background-color: rgb(62, 112, 206);
+    display: flex;
+    justify-content: center;
+    height: calc(100vh/10);
+}
