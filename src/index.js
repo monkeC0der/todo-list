@@ -18,7 +18,7 @@ function createProject(projectName) {
     return {getProjectName}
 }
 
- function createToDo (projectName, title, description) {
+ function createToDo (projectName, title, description, priority, dueDate) {
     const {getProjectName} = createProject(projectName);
 
     function editMessage(value) {
@@ -28,6 +28,14 @@ function createProject(projectName) {
     function editTitle(value) {
       this.title = value;
     }
-    return {title, description, getProjectName, editMessage, editTitle}
+
+    function editPriority(value) {
+      this.priority = value;
+    }
+
+    function editDueDate(value) {
+      this.dueDate = value;
+    }
+    return {title, description, priority, dueDate, getProjectName, editMessage, editTitle, editPriority, editDueDate}
  }
 
