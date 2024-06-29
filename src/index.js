@@ -1,4 +1,5 @@
 import './styles.css';
+import saveToDo from './storage';
 
  function component() {
    const element = document.createElement('div');
@@ -39,3 +40,17 @@ function createProject(projectName) {
     return {title, description, priority, dueDate, getProjectName, editMessage, editTitle, editPriority, editDueDate}
  }
 
+let toDoArray = [];
+
+
+let testToDo = createToDo('todays stuff', 'do laundry', 'use good detergent');
+
+saveToDo(toDoArray, testToDo);
+
+console.log(toDoArray)
+
+let testToDo2 = createToDo('todays stuff', 'eat lunch', 'finish the chicken breast in tupperware');
+
+saveToDo(toDoArray, testToDo2);
+
+console.log(toDoArray)
