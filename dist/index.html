@@ -6,6 +6,22 @@
 
   <script defer src="main.js"></script></head>
   <body>
+    <dialog id="modal">
+        
+      <h3>Create To-Do</h3>
+      <form class="addToDoForm" action="">
+          <label for="toDoTitle">Title</label>
+          <input id="toDoTitle" type="text">
+          <label for="toDoDescription">Message</label>
+          <input id="toDoDescription" type="text">
+          <label for="toDoPriority">Priority</label>
+          <input id="toDoPriority" type="text">
+          <label for="toDoDueDate">Due Date</label>
+          <input id="toDoDueDate" type="checkbox">
+          <button class="addBookForm-submitButton">Submit</button>
+      </form>
+      <button id="closeModalButton">Cancel</button>
+    </dialog>
    <nav id="header">
     <h1>2DuApp</h1>
    </nav>
@@ -14,7 +30,7 @@
       <h3>Sidebar</h3>
     </div>
     <div id="todo-grid-container">
-      <h3 id="todo-grid-title">To Do's</h3>
+      <h3 id="todo-grid-title">To Do's <button id="openModalButton" onclick="">Add To-Do</button></h3>
       <div id="todo-grid">
 
     </div>
