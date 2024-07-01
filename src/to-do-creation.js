@@ -6,6 +6,7 @@ export function createProject(projectName) {
 
 export function createToDo (projectName, title, description, priority, dueDate, completed) {
     const {getProjectName} = createProject(projectName);
+    let id = 0;
 
     function editMessage(value) {
       this.description = value;

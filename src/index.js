@@ -13,6 +13,10 @@ function loadPage() {
     }
     addToDoModalListener()
     addSubmitToDoFormListener(createToDo, saveToDo, toDoArray, loadPage)
+    toDoArray.forEach((item, i) => {
+        item.id = i + 1;
+      });
+    console.table(toDoArray)
     return toDoArray;
 }
 

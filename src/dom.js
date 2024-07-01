@@ -1,12 +1,12 @@
 export function addToDosToPage(toDos) {
     const toDoGrid = document.querySelector('#todo-grid');
     toDos.map((toDo) => {
-        let gridItem = addToDoCard(toDo);
+        let gridItem = addToDoCard(toDo, toDos);
         toDoGrid.appendChild(gridItem);
     });
 }
 
-export function addToDoCard(toDo) {
+export function addToDoCard(toDo, toDoArray) {
 
     let gridItem = document.createElement('div');
     let toDoTitle = document.createElement('h4');
@@ -19,6 +19,7 @@ export function addToDoCard(toDo) {
     toDoPriority.textContent = toDo.priority ? toDo.priority : 'No Priority';
     toDoDueDate.textContent = toDo.dueDate ? toDo.dueDate : 'No Due Date';
 
+    gridItem.id = toDo.id;
     toDoTitle.id = 'todo-card-title';
     toDoDescription.id = 'todo-card-description';
     toDoPriority.id = 'todo-card-priority';
@@ -26,8 +27,23 @@ export function addToDoCard(toDo) {
 
     gridItem.appendChild(toDoTitle);
     gridItem.appendChild(toDoDescription);
-    gridItem.appendChild(toDoPriority)
-    gridItem.appendChild(toDoDueDate)
-    
+    gridItem.appendChild(toDoPriority);
+    gridItem.appendChild(toDoDueDate);
+
+    let deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', () => {
+        gridItem.remove();
+        // Remove the todo from the toDoArray
+        const index = toDoArray.findIndex(item => item.id === toDo.id);
+        if (index !== -1) {
+            toDoArray.splice(index, 1);
+        }
+        localStorage.setItem('toDoArray', JSON.stringify(toDoArray))
+        console.table(toDoArray)
+    });
+
+    gridItem.appendChild(deleteButton);
+
     return gridItem;
 }
