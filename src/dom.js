@@ -19,7 +19,7 @@ export function addToDoCard(toDo, toDoArray) {
     toDoPriority.textContent = toDo.priority ? toDo.priority : 'No Priority';
     toDoDueDate.textContent = toDo.dueDate ? toDo.dueDate : 'No Due Date';
 
-    gridItem.id = toDo.id;
+    gridItem.id = 'todo-card';
     toDoTitle.id = 'todo-card-title';
     toDoDescription.id = 'todo-card-description';
     toDoPriority.id = 'todo-card-priority';
