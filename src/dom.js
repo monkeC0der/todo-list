@@ -8,8 +8,8 @@ export function addToDosToPage(toDos) {
 
 export function addToDoCard(toDo, toDoArray) {
 
-    let gridItem = document.createElement('div');
-    let toDoTitle = document.createElement('h4');
+    let gridItem = document.createElement('details');
+    let toDoTitle = document.createElement('summary');
     let toDoDescription = document.createElement('p');
     let toDoPriority = document.createElement('p');
     let toDoDueDate = document.createElement('p');
@@ -43,7 +43,7 @@ export function addToDoCard(toDo, toDoArray) {
         console.table(toDoArray)
     });
 
-    gridItem.appendChild(deleteButton);
+    toDoTitle.appendChild(deleteButton);
 
     return gridItem;
 }

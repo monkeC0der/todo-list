@@ -17,9 +17,9 @@ export function addSubmitToDoFormListener(createToDo, saveToDo, toDoArray, loadP
     addToDoButton.addEventListener('click', () => {
         console.log("event ran")
         let toDoTitleInput = document.querySelector("#toDoTitle");
-        let toDoDescriptionInput = document.querySelector("#toDoDescription")
-        let toDoPriorityInput = document.querySelector('input[name="priority"]:checked')
-        let toDoDueDateInput = document.querySelector("#toDoDueDate")
+        let toDoDescriptionInput = document.querySelector("#toDoDescription") || '';
+        let toDoPriorityInput = document.querySelector('input[name="priority"]:checked') || '';
+        let toDoDueDateInput = document.querySelector("#toDoDueDate") || '';
         
         let toDo = createToDo('todays stuff', toDoTitleInput.value, toDoDescriptionInput.value, toDoPriorityInput.value, toDoDueDateInput.value);
         saveToDo(toDoArray, toDo)
