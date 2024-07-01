@@ -9,16 +9,25 @@
     <dialog id="modal">
         
       <h3>Create To-Do</h3>
-      <form class="addToDoForm" action="">
+      <form id="addToDoForm" action="">
           <label for="toDoTitle">Title</label>
           <input id="toDoTitle" type="text">
           <label for="toDoDescription">Message</label>
-          <input id="toDoDescription" type="text">
-          <label for="toDoPriority">Priority</label>
-          <input id="toDoPriority" type="text">
+          <textarea id="toDoDescription" type="message"></textarea>
+          <div id="todo-priority-container">
+            <p>Priority</p>
+            <div>
+              <input type="radio" id="low" name="priority" value="low">
+              <label for="low">Low</label><br>
+              <input type="radio" id="medium" name="priority" value="medium">
+              <label for="medium">Medium</label><br>
+              <input type="radio" id="high" name="priority" value="high">
+              <label for="high">High</label>
+        </div>
+          </div>
           <label for="toDoDueDate">Due Date</label>
-          <input id="toDoDueDate" type="checkbox">
-          <button class="addBookForm-submitButton">Submit</button>
+          <input type="date" id="toDoDueDate" type="checkbox">
+          <button id="addToDoForm-submitButton">Submit</button>
       </form>
       <button id="closeModalButton">Cancel</button>
     </dialog>

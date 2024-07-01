@@ -2,17 +2,17 @@ import './styles.css';
 import saveToDo from './storage';
 import {createProject, createToDo} from './to-do-creation';
 import { addToDosToPage } from './dom';
-import { addToDoModalListener } from './event-listeners';
+import { addToDoModalListener, addSubmitToDoFormListener } from './event-listeners';
 
 let toDoArray = [];
 function loadPage() {
-    addToDoModalListener()
+    
     if (localStorage.getItem("toDoArray")) {
         toDoArray = JSON.parse(localStorage.getItem("toDoArray"))
         addToDosToPage(toDoArray)
-        return toDoArray;
     }
-
+    addToDoModalListener()
+    addSubmitToDoFormListener(createToDo, saveToDo, toDoArray, loadPage)
     return toDoArray;
 }
 
