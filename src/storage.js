@@ -1,4 +1,4 @@
 export default function saveToDo(toDoArray, toDo) {
     toDoArray.push(toDo);
-    localStorage.setItem('toDoArray', toDoArray)
+    localStorage.setItem('toDoArray', JSON.stringify(toDoArray))
 }
