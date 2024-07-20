@@ -1,9 +1,30 @@
 export function addToDosToPage(toDos) {
     const toDoGrid = document.querySelector('#todo-grid');
-    toDos.map((toDo) => {
-        let gridItem = addToDoCard(toDo, toDos);
-        toDoGrid.appendChild(gridItem);
-    });
+    if (toDos[0]) {
+        const pageHeader = document.querySelector("#todo-grid-title")
+        pageHeader.textContent = toDos[0].projectName;
+        toDos[0].toDoArray.map((toDo) => {
+            let gridItem = addToDoCard(toDo, toDos);
+            toDoGrid.appendChild(gridItem);
+        
+        });
+    }
+    
+}
+
+export function addProjectsToPage(toDos) {
+    console.log('we goin')
+    const sidebar = document.querySelector('#projectNames')
+    let projectNames = toDos.map(toDo => toDo.projectName)
+    const uniqueProjectNames = [...new Set(projectNames)];
+    uniqueProjectNames.map((projectName) => {
+        let projectButton = document.createElement('a');
+        projectButton.href = '#'
+        projectButton.textContent = projectName;
+        projectButton.id = 'sidebar-project-button'
+        sidebar.appendChild(projectButton);
+})
+    console.table(uniqueProjectNames);
 }
 
 export function addToDoCard(toDo, toDoArray) {
@@ -35,9 +56,12 @@ export function addToDoCard(toDo, toDoArray) {
     deleteButton.addEventListener('click', () => {
         gridItem.remove();
         // Remove the todo from the toDoArray
-        const index = toDoArray.findIndex(item => item.id === toDo.id);
-        if (index !== -1) {
-            toDoArray.splice(index, 1);
+        const index = toDoArray.findIndex(item => item.projectName === toDo.projectName);
+        console.log(index)
+        const toDoIndex = toDoArray[index].toDoArray.findIndex(item => item.toDoTitle == toDo.toDoTitle)
+        console.log('todo index:' + toDoIndex)
+        if (toDoIndex !== -1) {
+            toDoArray[index].toDoArray.splice(toDoIndex, 1);
         }
         localStorage.setItem('toDoArray', JSON.stringify(toDoArray))
         console.table(toDoArray)

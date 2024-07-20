@@ -5,7 +5,7 @@ export function createProject(projectName) {
 }
 
 export function createToDo (projectName, title, description, priority, dueDate, completed) {
-    const {getProjectName} = createProject(projectName);
+    // const {getProjectName} = createProject(projectName);
     let id = 0;
 
     function editMessage(value) {
@@ -28,5 +28,5 @@ export function createToDo (projectName, title, description, priority, dueDate, 
       this.completed = value;
     }
 
-    return {title, description, priority, dueDate, completed, getProjectName, editMessage, editTitle, editPriority, editDueDate, editCompleted}
+    return {title, description, priority, dueDate, completed, projectName, editMessage, editTitle, editPriority, editDueDate, editCompleted}
  }

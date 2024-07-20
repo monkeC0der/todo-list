@@ -1,8 +1,8 @@
 import './styles.css';
 import saveToDo from './storage';
 import {createProject, createToDo} from './to-do-creation';
-import { addToDosToPage } from './dom';
-import { addToDoModalListener, addSubmitToDoFormListener } from './event-listeners';
+import { addToDosToPage, addProjectsToPage } from './dom';
+import { addToDoModalListener, addSubmitToDoFormListener, addProjectModalListener } from './event-listeners';
 
 let toDoArray = [];
 function loadPage() {
@@ -10,13 +10,15 @@ function loadPage() {
     if (localStorage.getItem("toDoArray")) {
         toDoArray = JSON.parse(localStorage.getItem("toDoArray"))
         addToDosToPage(toDoArray)
+        addProjectsToPage(toDoArray)
     }
     addToDoModalListener()
     addSubmitToDoFormListener(createToDo, saveToDo, toDoArray, loadPage)
+    addProjectModalListener()
+    
     toDoArray.forEach((item, i) => {
         item.id = i + 1;
       });
-    console.table(toDoArray)
     return toDoArray;
 }
 
@@ -29,9 +31,8 @@ loadPage()
 
 // saveToDo(toDoArray, testToDo);
 
-// console.log(toDoArray) 
 
-// let testToDo2 = createToDo('todays stuff', 'eat lunch', 'finish the chicken breast in tupperware');
+// let testToDo2 = createToDo('tomorrow', 'eat lunch', 'finish the chicken breast in tupperware');
 
 // saveToDo(toDoArray, testToDo2);
 

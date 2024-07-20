@@ -8,6 +8,11 @@ body {
     font-family: 'Inter';
 }
 
+a {
+    text-decoration: none;
+    color: unset;
+}
+
 #sidebar-todo-container {
     background-color: #fafafa;
     display: flex;
@@ -18,9 +23,30 @@ body {
 #sidebar {
     background-color: #cbd5e1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
     width: calc(100%/10*2);
     box-shadow: inset 0px 3px 30px -14px rgba(0,0,0,0.75);
+    margin: 0px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#sidebar-project-button {
+    width: 80%;
+    margin: 0px;
+    
+}
+
+#sidebar-project-button:hover {
+    font-weight: bold;
+
+}
+
+#projectNames {
+    display: flex;
+    flex-direction: column;
 }
 
 #todo-grid-container {
@@ -113,5 +139,8 @@ body {
     background-color: rgb(62, 112, 206);
     display: flex;
     justify-content: center;
+    align-items: center;
     height: calc(100vh/10);
+    color:white;
+    font-size: 0.75em;
 }
