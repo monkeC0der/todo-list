@@ -1,146 +1,142 @@
 body {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0;
-    height: 100vh;
-    font-family: 'Inter';
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  height: 100vh;
+  font-family: "Inter";
 }
 
 a {
-    text-decoration: none;
-    color: unset;
+  text-decoration: none;
+  color: unset;
 }
 
 #sidebar-todo-container {
-    background-color: #fafafa;
-    display: flex;
-    flex-direction: row;
-    height: calc(100vh/10*9);
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh / 10 * 9);
 }
 
 #sidebar {
-    background-color: #cbd5e1;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    width: calc(100%/10*2);
-    box-shadow: inset 0px 3px 30px -14px rgba(0,0,0,0.75);
-    margin: 0px;
-    padding-left: 10px;
-    padding-top: 10px;
+  background-color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: calc(100% / 10 * 2);
+  box-shadow: inset 0px 3px 30px -14px rgba(0, 0, 0, 0.75);
+  margin: 0px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 #sidebar-project-button {
-    width: 80%;
-    margin: 0px;
-    
+  width: 80%;
+  margin: 0px;
 }
 
 #sidebar-project-button:hover {
-    font-weight: bold;
-
+  font-weight: bold;
 }
 
 #projectNames {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #todo-grid-container {
-    background-color: #ffffff;
-    width: calc(100%/10*8);
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-
+  background-color: #ffffff;
+  width: calc(100% / 10 * 8);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
 
 #todo-grid {
-    display: flex;
-    flex-direction: column;
-    height: calc(100%/10*9);
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% / 10 * 9);
+  padding: 10px;
 }
 
-
 #todo-grid-title {
-    background-color: #ffffff;
-    margin: 0;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    height: calc(100%/10);
-    padding: 10px;
+  background-color: #ffffff;
+  margin: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: calc(100% / 10);
+  padding: 10px;
 }
 
 #todo-card {
-    background-color: #ffffff;
-    /* border-radius: 9px 9px 9px 9px; */
-    padding: 10px;
-    /* box-shadow: 0px 0px 6px -2px rgba(0,0,0,0.75); */
-    opacity: 80%;
-    /* border-style: none; */
-    /* border-top: 1px solid rgb(209, 209, 209); */
-    border-bottom: 1px solid rgb(209, 209, 209);
+  background-color: #ffffff;
+  /* border-radius: 9px 9px 9px 9px; */
+  padding: 10px;
+  /* box-shadow: 0px 0px 6px -2px rgba(0,0,0,0.75); */
+  opacity: 80%;
+  /* border-style: none; */
+  /* border-top: 1px solid rgb(209, 209, 209); */
+  border-bottom: 1px solid rgb(209, 209, 209);
 }
 
 #todo-card:hover {
-    background-color: #f3f2f2;
+  background-color: #f3f2f2;
 }
 
 #todo-card-title {
-    color:rgb(0, 0, 0);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #addToDoForm {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #todo-priority-container {
-    display: flex;
+  display: flex;
 }
 
 #openModalButton {
-    position: absolute;
-    bottom: 100px;
-    right: 30px;
-    width: 45px;
-    height: 45px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #000;
-    background-color: #fff;
-    border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
+  position: absolute;
+  bottom: 100px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 
 #openModalButton:hover {
-    background-color: #1d4ed8;
-    box-shadow: 0px 15px 20px #1944bb;
-    color: #fff;
-    /* transform: translateY(-1px); */
+  background-color: #1d4ed8;
+  box-shadow: 0px 15px 20px #1944bb;
+  color: #fff;
+  /* transform: translateY(-1px); */
 }
 
 #footer {
-    background-color: rgb(62, 112, 206);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh/10);
-    color:white;
-    font-size: 0.75em;
+  background-color: rgb(62, 112, 206);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh / 10);
+  color: white;
+  font-size: 0.75em;
 }

@@ -1,36 +1,35 @@
-import './styles.css';
-import saveToDo from './storage';
-import {createProject, createToDo} from './to-do-creation';
-import { addToDosToPage, addProjectsToPage } from './dom';
-import { addToDoModalListener, addSubmitToDoFormListener, addProjectModalListener } from './event-listeners';
+import "./styles.css";
+import saveToDo from "./storage";
+import { createProject, createToDo } from "./to-do-creation";
+import { addToDosToPage, addProjectsToPage } from "./dom";
+import {
+  addToDoModalListener,
+  addSubmitToDoFormListener,
+  addProjectModalListener,
+} from "./event-listeners";
 
 let toDoArray = [];
 function loadPage() {
-    
-    if (localStorage.getItem("toDoArray")) {
-        toDoArray = JSON.parse(localStorage.getItem("toDoArray"))
-        addToDosToPage(toDoArray)
-        addProjectsToPage(toDoArray)
-    }
-    addToDoModalListener()
-    addSubmitToDoFormListener(createToDo, saveToDo, toDoArray, loadPage)
-    addProjectModalListener()
-    
-    toDoArray.forEach((item, i) => {
-        item.id = i + 1;
-      });
-    return toDoArray;
+  if (localStorage.getItem("toDoArray")) {
+    toDoArray = JSON.parse(localStorage.getItem("toDoArray"));
+    addToDosToPage(toDoArray);
+    addProjectsToPage(toDoArray);
+  }
+  addToDoModalListener();
+  addSubmitToDoFormListener(createToDo, saveToDo, toDoArray, loadPage);
+  addProjectModalListener();
+
+  toDoArray.forEach((item, i) => {
+    item.id = i + 1;
+  });
+  return toDoArray;
 }
 
-
-
-
-loadPage()
+loadPage();
 
 // let testToDo = createToDo('todays stuff', 'do laundry', 'use good detergent');
 
 // saveToDo(toDoArray, testToDo);
-
 
 // let testToDo2 = createToDo('tomorrow', 'eat lunch', 'finish the chicken breast in tupperware');
 
@@ -56,8 +55,5 @@ loadPage()
 
 // let testToDo8 = createToDo('tomorrow\'s stuff', 'clean the house', 'vacuum, dust, mop');
 // saveToDo(toDoArray, testToDo8);
-
-
-
 
 //currently working on adding todo's to dom
